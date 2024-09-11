@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Product = require("./models/product.model.js");
-const productRoute = require("./routes/product.route.js");
+const Dealer = require("./models/dealer.model.js");
+const dealerRoute = require("./routes/dealer.route.js");
 const app = express();
 
 // middleware
@@ -10,10 +10,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 // routes
-app.use("/api/products", productRoute);
-
-
-
+app.use("/dealers_info", dealerRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello from Node API Server Updated");
@@ -22,7 +19,7 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://haris2iftikhar:GClTzr15XhkjvN6k@backenddb.nrurtot.mongodb.net/Node-API?retryWrites=true&w=majority"
+    "mongodb+srv://nakshatra4585:V3kE48RuIIODCzgr@cluster0.opjyg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
     console.log("Connected to database!");
